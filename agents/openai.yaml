@@ -1,0 +1,4 @@
+interface:
+  display_name: "Video Flow"
+  short_description: "联网研究并确认文案、声音和风格后，用代码制作讲解视频"
+  default_prompt: "使用 $video-flow，先调研这个主题并交付文案，再让我选择配乐字幕或 API 配音与视觉风格："
