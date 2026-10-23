@@ -1,4 +1,4 @@
-# Documentation and example images
+# Documentation and example media
 
 Copyright 2026 Brave (zxd-666).
 

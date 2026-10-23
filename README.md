@@ -6,7 +6,17 @@
 
 ## 效果示例
 
-下面两帧来自一次本地端测：主题是“AI 辅助研究者发现 PHP 安全问题”，选择 **B 真人演说（API 配音）+ 3 深色技术台**。开场用时间轴建立问题，结尾回到判断与行动。图片是代码制作的视频画面截图；完整测试视频和第三方网页截图不随本仓库分发。
+### 三种风格的视频片段
+
+同一个 [weixin-sticker 项目](https://github.com/zxd-666/weixin-sticker)主题，用代码分别制作了三种视觉方向。点击封面播放 **30 秒视频示例**；片段按顺序展示 **1 清爽纪实（00:00–00:10）→ 2 纸感拼贴（00:10–00:20）→ 3 深色技术台（00:20–00:30）**。这是配乐字幕风格样片，不是三支完整成片。
+
+[![点击播放三种视频风格示例：左侧清爽纪实，中间纸感拼贴，右侧深色技术台](examples/style-showcase-cover.png)](https://raw.githubusercontent.com/zxd-666/video-flow/main/examples/style-showcase.mp4)
+
+[直接播放或下载 MP4](https://raw.githubusercontent.com/zxd-666/video-flow/main/examples/style-showcase.mp4)
+
+### 完整讲解视频的画面示例
+
+下面两帧来自另一轮本地端测：主题是“AI 辅助研究者发现 PHP 安全问题”，选择 **B 真人演说（API 配音）+ 3 深色技术台**。开场用时间轴建立问题，结尾回到判断与行动。图片是代码制作的视频画面截图；完整测试视频含第三方网页截图，其公开复用条件仍需核查，因此不随本仓库分发。
 
 <p>
   <img src="examples/php-security-opening.png" width="260" alt="端测开场：深色技术台中的时间轴与标题">
@@ -154,13 +164,13 @@ video-flow/
 ├── SKILL.md                       # 入口：流程、放行点与完成标准
 ├── README.md                      # 本文：面向使用者的说明与示例
 ├── LICENSE                        # 配置和未来代码的非商用许可
-├── LICENSE-CONTENT.md             # 文档与示例图片的非商用许可及范围
+├── LICENSE-CONTENT.md             # 文档与示例媒体的非商用许可及范围
 ├── agents/openai.yaml             # Codex 展示与调用元数据
 ├── references/
 │   ├── research-and-script.md     # 调研、证据索引、脚本和审稿
 │   ├── production-and-qa.md       # 导演方案、制作、验收与交付
 │   └── minimax-voice.md           # MiniMax 配音的可选接入边界
-└── examples/                      # 本地端测的代码画面截图
+└── examples/                      # 三种风格的视频样片、封面与端测截图
 ```
 
 `references/` 按阶段读取：研究时看研究文档，文案与方案确认后才看制作文档；选择 MiniMax 配音时才需要相应接入说明。视频工程和成片应放在每次任务的独立目录，不要把一次测试的输出当作 Skill 的固定依赖。
