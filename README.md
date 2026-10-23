@@ -25,6 +25,23 @@
 
 这只是一个已选风格的实例。真实来源截图、解释机制的动画、字幕和声音会随当次脚本重新设计。
 
+## 安装与使用
+
+需要支持本地 Skill 的 Codex 环境。本仓库根目录本身就是 Skill 目录；`SKILL.md` 是入口，调用名为 `$video-flow`。先获取仓库，再在仓库根目录安装：
+
+```bash
+git clone https://github.com/zxd-666/video-flow.git
+cd video-flow
+mkdir -p "$HOME/.codex/skills/video-flow"
+rsync -a --exclude='.git/' --exclude='examples/' ./ "$HOME/.codex/skills/video-flow/"
+```
+
+在新对话中输入：`$video-flow 做一支介绍我的项目的中文讲解视频，先调研并给我看完整文案。` 预期先收到调研、来源和文案供确认；声音与视觉风格确定后才进入制作。完整对话见下文。
+
+如果安装目录已有独立副本，修改本仓库后要重新同步，才会影响该副本。`rsync` 会更新目标目录的同名文件，执行前先检查目标中是否有自己的改动。
+
+画面制作需要本机可用的代码渲染工具。Skill 会优先检查已安装的 `huashu-motion` 后端及其 `om` CLI；不可用时，应说明缺口并选择可验证的代码渲染路径。API 配音只在选 B 时需要；MiniMax 的接入边界见 [配音参考](references/minimax-voice.md)，其他服务也须核查当前官方能力与授权。
+
 ## 适合什么任务
 
 - **资讯解读**：核实近期事件，把“发生了什么、为什么重要、去哪看原文”讲清楚。
@@ -142,21 +159,6 @@ video-project/
 - 结尾要给观众带得走的信息：原始资料在哪里、先看哪部分，以及与主题直接相关的 1–3 个检查或判断动作。
 - 第三方截图、图片、音乐和字体在发布前应核对来源、署名和使用条件。调研时保存了候选素材，不代表已经取得公开传播权。
 
-## 安装与使用
-
-需要支持本地 Skill 的 Codex 环境。本仓库根目录本身就是 Skill 目录；`SKILL.md` 是入口，调用名为 `$video-flow`。先获取仓库，再在仓库根目录安装：
-
-```bash
-git clone https://github.com/zxd-666/video-flow.git
-cd video-flow
-mkdir -p "$HOME/.codex/skills/video-flow"
-rsync -a --exclude='.git/' --exclude='examples/' ./ "$HOME/.codex/skills/video-flow/"
-```
-
-如果安装目录已有独立副本，修改本仓库后要重新同步，才会影响该副本。`rsync` 会更新目标目录的同名文件，执行前先检查目标中是否有自己的改动。
-
-画面制作需要本机可用的代码渲染工具。Skill 会优先检查已安装的 `huashu-motion` 后端及其 `om` CLI；不可用时，应说明缺口并选择可验证的代码渲染路径。API 配音只在选 B 时需要；MiniMax 的接入边界见 [配音参考](references/minimax-voice.md)，其他服务也须核查当前官方能力与授权。
-
 ## 仓库结构
 
 ```text
@@ -197,3 +199,7 @@ python3 ~/.codex/skills/.system/skill-creator/scripts/quick_validate.py .
 商用应先取得权利人的单独授权。项目中的外部链接、被引用的第三方素材和用户自行制作的视频，不会因为这个仓库的许可而自动获得相同授权；发布视频时仍需逐项核查。
 
 “禁止商用”与 [OSI 的开源软件定义](https://opensource.org/osd)不兼容，因此这里准确称为**源码公开、非商用许可**，不标作 OSI 开源软件。公开仓库地址：[zxd-666/video-flow](https://github.com/zxd-666/video-flow)。
+
+## 联系
+
+张张实验室 · [GitHub](https://github.com/zxd-666) · [小红书](https://xhslink.cn/o/7DSli2Fl3Vb)
