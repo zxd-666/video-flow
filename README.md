@@ -2,7 +2,7 @@
 
 从主题或文稿，制作有来源、能讲清楚、可继续修改的中文讲解视频。**先调研和确认文案，再确定声音与视觉风格，最后用代码制作成片。**
 
-本仓库是 Codex Skill 的规则与参考文档，不是输入标题就自动导出 MP4 的独立程序。每支视频的工程、素材和成片由 Skill 在任务中创建，渲染后端按本机环境选择。
+本仓库是 Codex Skill 的规则与参考文档，不是输入标题就自动导出 MP4 的独立程序。每支视频的工程、素材和成片由 Skill 在任务中创建，渲染后端按本机环境选择。本项目准备公开源码，**允许按许可非商用使用、修改和分享；商用需单独授权**。
 
 ## 效果示例
 
@@ -141,7 +141,7 @@ mkdir -p "$HOME/.codex/skills/video-flow"
 rsync -a --exclude='.git/' --exclude='examples/' ./ "$HOME/.codex/skills/video-flow/"
 ```
 
-如果安装目录已有独立副本，修改本仓库后要重新同步，才会影响该副本。`rsync` 会更新目标目录的同名文件，执行前先检查目标中是否有自己的改动。公开发布后的获取地址尚未确定，这里不提供虚构的 `git clone` 地址。
+如果安装目录已有独立副本，修改本仓库后要重新同步，才会影响该副本。`rsync` 会更新目标目录的同名文件，执行前先检查目标中是否有自己的改动。当前尚无远程仓库地址，这里不提供虚构的 `git clone` 地址。
 
 画面制作需要本机可用的代码渲染工具。Skill 会优先检查已安装的 `huashu-motion` 后端及其 `om` CLI；不可用时，应说明缺口并选择可验证的代码渲染路径。API 配音只在选 B 时需要；MiniMax 的接入边界见 [配音参考](references/minimax-voice.md)，其他服务也须核查当前官方能力与授权。
 
@@ -151,6 +151,8 @@ rsync -a --exclude='.git/' --exclude='examples/' ./ "$HOME/.codex/skills/video-f
 video-flow/
 ├── SKILL.md                       # 入口：流程、放行点与完成标准
 ├── README.md                      # 本文：面向使用者的说明与示例
+├── LICENSE                        # 配置和未来代码的非商用许可
+├── LICENSE-CONTENT.md             # 文档与示例图片的非商用许可及范围
 ├── agents/openai.yaml             # Codex 展示与调用元数据
 ├── references/
 │   ├── research-and-script.md     # 调研、证据索引、脚本和审稿
@@ -173,4 +175,13 @@ python3 ~/.codex/skills/.system/skill-creator/scripts/quick_validate.py .
 
 付费 API Key 只在运行时从系统密钥管理器或已注入的进程环境读取；**不要写入本仓库、视频工程、命令文本、日志或交付包**。`.gitignore` 只是辅助，提交前仍需检查新增文件。确认本地制作不等于授权购买服务、克隆个人声音、上传或发布视频。
 
-本仓库目前只做本地版本管理，**尚未选择开源许可证，也未发布远程仓库**。在许可证确定前，不应假定它可以被第三方再分发。
+## 许可
+
+| 文件范围 | 许可 | 可以做什么 |
+| --- | --- | --- |
+| `README.md`、`SKILL.md`、`references/`、`examples/` | [CC BY-NC 4.0](LICENSE-CONTENT.md) | 非商用使用、改编和分享；分享时注明作者、许可和修改情况 |
+| `agents/openai.yaml`、`.gitignore`、未来新增的代码与配置 | [PolyForm Noncommercial 1.0.0](LICENSE) | 按许可进行非商用使用、修改和分发；保留许可与 Required Notice |
+
+商用应先取得权利人的单独授权。项目中的外部链接、被引用的第三方素材和用户自行制作的视频，不会因为这个仓库的许可而自动获得相同授权；发布视频时仍需逐项核查。
+
+“禁止商用”与 [OSI 的开源软件定义](https://opensource.org/osd)不兼容，因此这里准确称为**源码公开、非商用许可**，不标作 OSI 开源软件。目前仓库只在本地，尚未上传或发布远程仓库。
