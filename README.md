@@ -8,11 +8,11 @@
 
 ### 三种风格的视频片段
 
-同一个 [weixin-sticker 项目](https://github.com/zxd-666/weixin-sticker)主题，用代码分别制作了三种视觉方向。点击封面播放 **30 秒视频示例**；片段按顺序展示 **1 清爽纪实（00:00–00:10）→ 2 纸感拼贴（00:10–00:20）→ 3 深色技术台（00:20–00:30）**。这是配乐字幕风格样片，不是三支完整成片。
+同一个 [weixin-sticker 项目](https://github.com/zxd-666/weixin-sticker)主题，用代码分别制作了三种视觉方向。下方并排动图可以直接比较画面运动；点击动图可打开 **30 秒视频示例**。完整视频按顺序展示 **1 清爽纪实（00:00–00:10）→ 2 纸感拼贴（00:10–00:20）→ 3 深色技术台（00:20–00:30）**。这是配乐字幕风格样片，不是三支完整成片。
 
-[![点击播放三种视频风格示例：左侧清爽纪实，中间纸感拼贴，右侧深色技术台](examples/style-showcase-cover.png)](https://raw.githubusercontent.com/zxd-666/video-flow/main/examples/style-showcase.mp4)
+[![三种视频风格的并排动态预览：左侧清爽纪实，中间纸感拼贴，右侧深色技术台](examples/style-showcase-preview.gif)](https://github.com/zxd-666/video-flow/blob/main/examples/style-showcase.mp4)
 
-[直接播放或下载 MP4](https://raw.githubusercontent.com/zxd-666/video-flow/main/examples/style-showcase.mp4)
+[查看 30 秒 MP4](https://github.com/zxd-666/video-flow/blob/main/examples/style-showcase.mp4) · [下载 MP4](https://raw.githubusercontent.com/zxd-666/video-flow/main/examples/style-showcase.mp4) · [查看高清静态对比图](examples/style-showcase-cover.png)
 
 ### 完整讲解视频的画面示例
 
@@ -170,7 +170,7 @@ video-flow/
 │   ├── research-and-script.md     # 调研、证据索引、脚本和审稿
 │   ├── production-and-qa.md       # 导演方案、制作、验收与交付
 │   └── minimax-voice.md           # MiniMax 配音的可选接入边界
-└── examples/                      # 三种风格的视频样片、封面与端测截图
+└── examples/                      # 三种风格的视频、动态预览、封面与端测截图
 ```
 
 `references/` 按阶段读取：研究时看研究文档，文案与方案确认后才看制作文档；选择 MiniMax 配音时才需要相应接入说明。视频工程和成片应放在每次任务的独立目录，不要把一次测试的输出当作 Skill 的固定依赖。
