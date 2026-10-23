@@ -2,7 +2,7 @@
 
 从主题或文稿，制作有来源、能讲清楚、可继续修改的中文讲解视频。**先调研和确认文案，再确定声音与视觉风格，最后用代码制作成片。**
 
-本仓库是 Codex Skill 的规则与参考文档，不是输入标题就自动导出 MP4 的独立程序。每支视频的工程、素材和成片由 Skill 在任务中创建，渲染后端按本机环境选择。本项目准备公开源码，**允许按许可非商用使用、修改和分享；商用需单独授权**。
+本仓库是 Codex Skill 的规则与参考文档，不是输入标题就自动导出 MP4 的独立程序。每支视频的工程、素材和成片由 Skill 在任务中创建，渲染后端按本机环境选择。本项目公开源码，**允许按许可非商用使用、修改和分享；商用需单独授权**。
 
 ## 效果示例
 
@@ -134,14 +134,16 @@ video-project/
 
 ## 安装与使用
 
-需要支持本地 Skill 的 Codex 环境。本仓库根目录本身就是 Skill 目录；`SKILL.md` 是入口，调用名为 `$video-flow`。首次本地安装可在仓库根目录运行：
+需要支持本地 Skill 的 Codex 环境。本仓库根目录本身就是 Skill 目录；`SKILL.md` 是入口，调用名为 `$video-flow`。先获取仓库，再在仓库根目录安装：
 
 ```bash
+git clone https://github.com/zxd-666/video-flow.git
+cd video-flow
 mkdir -p "$HOME/.codex/skills/video-flow"
 rsync -a --exclude='.git/' --exclude='examples/' ./ "$HOME/.codex/skills/video-flow/"
 ```
 
-如果安装目录已有独立副本，修改本仓库后要重新同步，才会影响该副本。`rsync` 会更新目标目录的同名文件，执行前先检查目标中是否有自己的改动。当前尚无远程仓库地址，这里不提供虚构的 `git clone` 地址。
+如果安装目录已有独立副本，修改本仓库后要重新同步，才会影响该副本。`rsync` 会更新目标目录的同名文件，执行前先检查目标中是否有自己的改动。
 
 画面制作需要本机可用的代码渲染工具。Skill 会优先检查已安装的 `huashu-motion` 后端及其 `om` CLI；不可用时，应说明缺口并选择可验证的代码渲染路径。API 配音只在选 B 时需要；MiniMax 的接入边界见 [配音参考](references/minimax-voice.md)，其他服务也须核查当前官方能力与授权。
 
@@ -184,4 +186,4 @@ python3 ~/.codex/skills/.system/skill-creator/scripts/quick_validate.py .
 
 商用应先取得权利人的单独授权。项目中的外部链接、被引用的第三方素材和用户自行制作的视频，不会因为这个仓库的许可而自动获得相同授权；发布视频时仍需逐项核查。
 
-“禁止商用”与 [OSI 的开源软件定义](https://opensource.org/osd)不兼容，因此这里准确称为**源码公开、非商用许可**，不标作 OSI 开源软件。目前仓库只在本地，尚未上传或发布远程仓库。
+“禁止商用”与 [OSI 的开源软件定义](https://opensource.org/osd)不兼容，因此这里准确称为**源码公开、非商用许可**，不标作 OSI 开源软件。公开仓库地址：[zxd-666/video-flow](https://github.com/zxd-666/video-flow)。
